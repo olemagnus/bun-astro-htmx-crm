@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TableView from "../../components/TableView.astro";
+import EntityView from "../../components/EntityView.astro";
+---
+
+<Layout title="CRM">
+  <section class="bg-slate-100 grow p-4">
+    <TableView slot="table-view" />
+  </section>
+  <article class="bg-slate-200 grow p-4 mt-4">
+    <EntityView name="Barrack Obama" />
+  </article>
+</Layout>

@@ -1,0 +1,68 @@
+---
+const rows = [
+  {
+    firstName: "John",
+    lastName: "McClain",
+  },
+  {
+    firstName: "Barrack",
+    lastName: "Obama",
+  },
+  {
+    firstName: "Donald",
+    lastName: "Duck",
+  },
+];
+---
+
+<div class="flex flex-col h-full grow">
+  <div class="grow">
+    <table slot="table-view" class="w-full">
+      <thead>
+        <tr>
+          <th class="text-left">First name</th>
+          <th class="text-left"> Last name</th>
+          <th class="sr-only">Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((row) => (
+            <tr class="odd:bg-green-300 even:bg-green-200 hover:brightness-105">
+              {Object.entries(row).map(([key, value]) => (
+                <td>
+                  {/* Link is only visible to sighted users. Content is visible to all. */}
+                  <a
+                    href={`?name=${row.firstName} ${row.lastName}`}
+                    class="block w-full"
+                    role="none"
+                  >
+                    {value}
+                  </a>
+                </td>
+              ))}
+              {/* This column is used to show screen readers the row link */}
+              <td class="sr-only">
+                <a
+                  href={`?name=${row.firstName} ${row.lastName}`}
+                  class="sr-only"
+                >
+                  Select row
+                </a>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <section class="shrink-0">
+    <form>
+      <button
+        type="submit"
+        class="border-2 bg-white border-black rounded-lg leading-none py-1.5 px-2"
+        >Add</button
+      >
+    </form>
+  </section>
+</div>
