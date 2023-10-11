@@ -1,54 +1,35 @@
-# Astro Starter Kit: Basics
+# Bun, Astro, and HTMX experiment
+
+Install:
 
 ```sh
-npm create astro@latest -- --template basics
+bun install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Run local development:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+bun dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Bun
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+An alternative runtime to Node.js. It is faster, and more importantly has a lot of built in tooling. No third-party bundlers, compilers, test runners, etc.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Astro
 
-## 🧞 Commands
+A web framework for building static and dynamic pages. The default output is HTML and doesn't require javascript. It uses the MPA (multi page application) pattern instead of SPA (single page application), which results in much less complexity.
 
-All commands are run from the root of the project, from a terminal:
+## HTMX
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+A librabry for building dynamic interactive web applications. It does not require any custom javascript to make web applications without full page reloads.
 
-## 👀 Want to learn more?
+## Other libraries
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Alpine.js
+
+A lightweight client side javascript library for updating the DOM. Used mainly for simple interactions that does not require the server.
+
+### Tailwind
+
+A styling framework using utility classes. Only uses CSS without the need of a runtime.
