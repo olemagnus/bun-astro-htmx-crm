@@ -2,13 +2,27 @@
 import Layout from "../../layouts/Layout.astro";
 import TableView from "../../components/TableView.astro";
 import EntityView from "../../components/EntityView.astro";
+import "../../styles/base.css";
 ---
+
+<script src="https://unpkg.com/htmx.org@1.8.5"></script>
+<meta name="htmx-config" content='{"includeIndicatorStyles": false}' />
 
 <Layout title="CRM">
   <section class="bg-slate-100 grow p-4">
-    <TableView slot="table-view" />
+    <!-- <TableView slot="table-view" /> -->
+    <button
+      hx-get="/demo/fett"
+      hx-target="#entity-view"
+      hx-indicator="#spinner"
+      class="p-2 border border-black">Fett</button
+    >
   </section>
-  <article class="bg-slate-200 grow p-4 mt-4">
-    <EntityView name="Barrack Obama" />
+  <article class="bg-slate-200 grow p-4 mt-4" id="entity-view">
+    <div id="spinner" class="hidden">Loading...</div>
+    <!-- <div
+      class="spinner border-t-4 border-blue-500 h-12 w-12 rounded-full animate-spin"
+    > -->
   </article>
+  <!-- <EntityView name="Barrack Obama" /> -->
 </Layout>
